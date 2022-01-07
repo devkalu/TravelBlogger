@@ -1,33 +1,35 @@
 import React, { useContext } from "react";
-import { Text, StyleSheet, Button, FlatList, View } from "react-native";
+import {
+  Text,
+  StyleSheet,
+  Button,
+  FlatList,
+  View,
+  SafeAreaView,
+} from "react-native";
 
 //internal imports
 import BlogContext from "../../context/BlogContext";
-import commonStyles from "../../commonStyles";
-import {
-  sz1,
-  sz2,
-  sz3,
-  sz4,
-  sz5,
-  sz6,
-  sz7,
-  sz8,
-  sz9,
-} from "../../commonStyles";
+import commonStyles, { sz4, sz6 } from "../../commonStyles";
+import { sz5 } from "../../commonStyles";
+
+//components
 import HomeMenuBar from "../../components/HomeMenuBar";
 import ImagePost from "../../components/ImagePost";
+import PostList from "../../components/PostList";
+import Header from "../../components/Header";
 
 const HomeScreen = () => {
   const { data, addBlogPost } = useContext(BlogContext);
-  const { h1, h2, h3, h4, h5, h6 } = commonStyles;
 
   return (
     <View style={styles.container}>
-      <Button title="Add Post" onPress={addBlogPost} />
-      <Text style={[h1]}>Home</Text>
-      <ImagePost />
-      <HomeMenuBar />
+      <SafeAreaView style={{ flex: 1 }}>
+        <Header />
+        <ImagePost />
+        <HomeMenuBar />
+        <PostList />
+      </SafeAreaView>
     </View>
   );
 };

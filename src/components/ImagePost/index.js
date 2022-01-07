@@ -103,7 +103,6 @@ const styles = StyleSheet.create({
   },
   captionStyle: {
     backgroundColor: "#141e28",
-
     width: "80%",
     height: "35%",
     top: sz7,
