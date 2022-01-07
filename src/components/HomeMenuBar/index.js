@@ -13,8 +13,12 @@ const HomeMenuBar = () => {
       <TouchableOpacity>
         <Ionicons name="ios-search" size={24} color="black" />
       </TouchableOpacity>
+
       <TouchableOpacity>
-        <FontAwesome name="pencil-square-o" size={24} color="black" />
+        <Ionicons name="ios-bookmarks-outline" size={24} color="black" />
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Ionicons name="settings-outline" size={24} color="black" />
       </TouchableOpacity>
     </View>
   );
@@ -24,7 +28,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
     height: "7%",
-    width: "70%",
+    width: "80%",
     bottom: sz5,
     alignSelf: "center",
     borderRadius: sz6,
