@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Text, Image } from "react-native";
+import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 import {
   sz1,
   sz6,
@@ -11,23 +11,34 @@ import {
   sz3,
   sz4,
 } from "../../commonStyles";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
 
-const Header = () => {
+const Header = ({}) => {
   return (
     <View style={styles.container}>
-      <View style={{ height: "67%", width: "55%" }}>
+      <View
+        style={{
+          height: "55%",
+          width: "40%",
+          position: "absolute",
+        }}
+      >
         <Image
           source={require("../../../assets/TravelBlogger.png")}
-          style={{ height: "100%", width: "100%" }}
+          style={{
+            height: "100%",
+            width: "100%",
+          }}
         />
       </View>
-      <MaterialCommunityIcons
-        name="weather-night"
-        size={24}
-        color="black"
-        style={{ position: "absolute", right: 0 }}
-      />
+      <TouchableOpacity style={{ flex: 1, justifyContent: "center" }}>
+        <MaterialCommunityIcons
+          name="weather-night"
+          size={sz5}
+          color="black"
+          style={{ position: "absolute", right: 0 }}
+        />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -36,8 +47,9 @@ const styles = StyleSheet.create({
   container: {
     marginRight: sz5,
     flexDirection: "row",
-    justifyContent: "center",
     height: "5%",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 
